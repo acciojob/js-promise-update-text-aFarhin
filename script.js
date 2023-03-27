@@ -1,5 +1,3 @@
-//your JS code here. If required.
-
 // Get a reference to the output element
 const outputElem = document.getElementById('output');
 
@@ -14,8 +12,14 @@ const delayPromise = new Promise((resolve, reject) => {
 delayPromise
   .then((result) => {
     outputElem.innerText = result;
+    return result;
+  })
+  .then((result) => {
+    // Test if the text of the output element was updated correctly
+    if (outputElem.innerText !== result) {
+      throw new Error('Text not updated correctly');
+    }
   })
   .catch((error) => {
     console.error(error);
   });
-
