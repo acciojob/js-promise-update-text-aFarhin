@@ -11,10 +11,8 @@ const delayPromise = new Promise((resolve, reject) => {
 // Handle the result of the promise
 delayPromise
   .then((result) => {
+    // Update the text of the output element
     outputElem.innerText = result;
-    return result;
-  })
-  .then((result) => {
     // Test if the text of the output element was updated correctly
     if (outputElem.innerText !== result) {
       throw new Error('Text not updated correctly');
