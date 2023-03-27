@@ -1,15 +1,13 @@
 //your JS code here. If required.
-function call(){
-	return new Promise(function (resolve,reject) {
-		setTimeout(()=>{
-			resolve("Hello, world!");
-		},1000);
-	
-	});
-}
+function delayInHello() {
+			return new Promise((resolve) => {
+				setTimeout(() => {
+					resolve('Hello, world!');
+				}, 1000);
+			});
+		}
 
-
-call().then(function (data) {
-	const div = document.getElementById('output')
-    div.innerHTML = data;
-})
+		delayInHello().then((message) => {
+			const outputElement = document.getElementById('output');
+			outputElement.textContent = message;
+		});
